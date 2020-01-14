@@ -2,6 +2,13 @@
 
 <h1>Home</h1>
 <p> <%=startingContent%> </p>
+<% console.log(journalPosts); %>
 
+<% journalPosts.forEach(function(journalPost) { %>
+<h1> <%= journalPost.title%> </h1>
+<p> <%= journalPost.body.substring(0,100) + " ..."%>
+<a href="/posts/<%= journalPost.title%>">Read more</a>
+</p>
+<% }) %>
 
 <%- include("partials/footer") -%>
